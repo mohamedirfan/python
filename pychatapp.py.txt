@@ -23,7 +23,7 @@ if __name__ == "__main__":
     StructField("TYPE",StringType(), True)])
 
     sc = spark.sparkContext
-    ssc = StreamingContext(sc, 60)
+    ssc = StreamingContext(sc, 20)
 
     brokers, topic = sys.argv[1:]
     kvs = KafkaUtils.createDirectStream(ssc, [topic], {"metadata.broker.list": brokers})
