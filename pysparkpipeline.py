@@ -46,9 +46,7 @@ def store_data(processed_df):
     #processed_df.write.format("bigquery").option("temporaryGcsBucket","gs://com-inceptez-codebase").save("dataset1.emptable")
 
 def main():
-    spark = SparkSession.builder \
-    #master("local[1]").
-    .appName("Spark SQL pyspark") \
+    spark = SparkSession.builder.appName("Spark SQL pyspark") \
     .getOrCreate()
     spark.sparkContext.setLogLevel("ERROR")
     spark.conf.set("spark.sql.shuffle.partitions", "10")
