@@ -15,7 +15,7 @@ if __name__ == '__main__':
    spark.sparkContext.setLogLevel("ERROR")
    sc=spark.sparkContext
    # Create a file rdd with 4 partitions
-   rdd = sc.textFile("file:///F://hive//txns",4)
+   rdd = sc.textFile("file:/tmp/txns",4)
    print(rdd.count())
    # create a hadoop rdd with 4 partitions
    # create the below dir in hadoop and place the file txns in the below dir
